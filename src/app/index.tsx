@@ -3,6 +3,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { Input } from "@/components/input";
 import { colors } from "@/styles/colors";
+import { Button } from "@/components/button";
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
           />
           <Input.Field placeholder="Código do ingresso" />
         </Input>
+
+        <Button title="Acessar credencial" />
       </View>
     </View>
   );
