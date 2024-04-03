@@ -25,7 +25,7 @@ Pass.in
 - [Typescript](https://www.typescriptlang.org/)
 - [Expo](https://expo.dev/)
 - [Tailwindcss](https://tailwindcss.com/)
-- [Nativewind: Expo Router](https://www.nativewind.dev/v4/getting-started/expo-router)
+- [Nativewind](https://www.nativewind.dev/v4/getting-started/expo-router)
 
 ## Important Settings
 
@@ -35,9 +35,15 @@ These other settings are extremely important, without them, your application wil
 🇧🇷
 Estas outras configurações, são de extrema importância, sem elas, a sua aplicação não vai funcionar, se não seguir passo a passo.
 
-- install nativewind: `npx expo install nativewind@^4.0.1 react-native-reanimated tailwindcss`
-- Create a file and paste the content below: `tailwind.config.js` more later change this line to: `content: ["./src/**/*.{js,jsx,ts,tsx}"],`
-  <br />
+- install nativewind: `npx expo install nativewind@^4.0.1 react-native-reanimated tailwindcss`;
+- Create a file and paste the content below: `tailwind.config.js` more later change this line to: `content: ["./src/**/*.{js,jsx,ts,tsx}"],`;
+- Create a file and paste the content below: `global.css`;
+- Updating file existent in project and paste the content below SDK 50+: `babel.config.js`;
+- Create a file and paste the content below SDK 50+: `metro.config.js`;
+  - Updating line: `module.exports = withNativeWind(config, { input: "./src/styles/global.css" });`;
+- Create a file Identify the tailwind css type in react native: `nativewind-env.d.ts`;
+  <br /><br />
+- install fonts: `npx expo install expo-font @expo-google-fonts/roboto`
 
 ## Demonstration
 
