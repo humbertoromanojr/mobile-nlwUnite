@@ -20,7 +20,10 @@ export default function Home() {
           <Input.Field placeholder="Código do ingresso" />
         </Input>
 
-        <Button title="Acessar credencial" />
+        <Button
+          title="Acessar credencial"
+          onPress={() => console.warn("clicou")}
+        />
       </View>
     </View>
   );
