@@ -1,5 +1,4 @@
 import React from "react";
-import { View, Text } from "react-native";
 import QRCodeSvg from "react-native-qrcode-svg";
 
 import { colors } from "@/styles/colors";
