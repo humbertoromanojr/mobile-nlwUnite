@@ -24,6 +24,7 @@ Pass.in
 - [React Native](https://reactnative.dev/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Expo](https://expo.dev/)
+- [Image picker](https://docs.expo.dev/tutorial/image-picker/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Nativewind](https://www.nativewind.dev/v4/getting-started/expo-router)
 
@@ -43,7 +44,8 @@ Estas outras configurações, são de extrema importância, sem elas, a sua apli
   - Updating line: `module.exports = withNativeWind(config, { input: "./src/styles/global.css" });`;
 - Create a file Identify the tailwind css type in react native: `nativewind-env.d.ts`;
   <br /><br />
-- install fonts: `npx expo install expo-font @expo-google-fonts/roboto`
+- Install fonts: `npx expo install expo-font @expo-google-fonts/roboto`
+- Install Image picker: `npx expo install expo-image-picker`
 
 ## Demonstration
 
