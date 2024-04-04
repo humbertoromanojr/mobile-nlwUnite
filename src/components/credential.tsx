@@ -8,7 +8,8 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-import { colors } from "../styles/colors";
+import { colors } from "@/styles/colors";
+import { QRCode } from "@/components/qrcode";
 
 type CredentialProps = {
   image?: string;
@@ -29,7 +30,7 @@ export default function Credential({ onChangeAvatar, image }: CredentialProps) {
           className="px-6 py-8 h-40 items-center self-stretch border-b border-white/10 overflow-hidden"
         >
           <View className="w-full flex-row items-center justify-between">
-            <Text className="text-zinc-50 text-sm font-bold">Unite sumit</Text>
+            <Text className="text-zinc-50 text-sm font-bold">Unite Summit</Text>
             <Text className="text-zinc-50 text-sm font-bold">#123345567</Text>
           </View>
 
@@ -57,14 +58,11 @@ export default function Credential({ onChangeAvatar, image }: CredentialProps) {
           Humberto Junior
         </Text>
 
-        <Text className="font-regular text-base text-zinc-300">
+        <Text className="font-regular text-base text-zinc-300 mb-2">
           humbertojr@teste.com
         </Text>
 
-        <Image
-          source={require("@/assets/ticket/qrcode.png")}
-          className="w-32 h-32 mt-4"
-        />
+        <QRCode value="teste" size={120} />
 
         <TouchableOpacity activeOpacity={0.7} className="mt-6">
           <Text className="font-body text-orange-500 text-sm">

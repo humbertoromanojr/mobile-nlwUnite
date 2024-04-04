@@ -1,10 +1,21 @@
 import React from "react";
 import { View, Text } from "react-native";
+import QRCodeSvg from "react-native-qrcode-svg";
 
-export default function Qrcode() {
+import { colors } from "@/styles/colors";
+
+type QRCodeProps = {
+  value: string;
+  size: number;
+};
+
+export function QRCode({ value, size }: QRCodeProps) {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <QRCodeSvg
+      value={value}
+      size={size}
+      color={colors.white}
+      backgroundColor="transparent"
+    />
   );
 }
