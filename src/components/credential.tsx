@@ -37,10 +37,12 @@ export default function Credential({ onChangeAvatar, image }: CredentialProps) {
         </ImageBackground>
 
         {image ? (
-          <Image
-            source={{ uri: image }}
-            className="w-36 h-36 rounded-full -mt-24"
-          />
+          <TouchableOpacity activeOpacity={0.7} onPress={onChangeAvatar}>
+            <Image
+              source={{ uri: image }}
+              className="w-36 h-36 rounded-full -mt-24"
+            />
+          </TouchableOpacity>
         ) : (
           <TouchableOpacity
             activeOpacity={0.7}
