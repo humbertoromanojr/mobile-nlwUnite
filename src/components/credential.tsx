@@ -6,8 +6,16 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
+import { Feather } from "@expo/vector-icons";
 
-export default function Credential() {
+import { colors } from "../styles/colors";
+
+type CredentialProps = {
+  image?: string;
+  onChangeAvatar?: () => void;
+};
+
+export default function Credential({ onChangeAvatar, image }: CredentialProps) {
   return (
     <View className="w-full self-stretch items-center">
       <Image
@@ -28,10 +36,20 @@ export default function Credential() {
           <View className="w-40 h-40 bg-black rounded-full" />
         </ImageBackground>
 
-        <Image
-          source={{ uri: "https://github.com/humbertoromanojr.png" }}
-          className="w-36 h-36 rounded-full -mt-24"
-        />
+        {image ? (
+          <Image
+            source={{ uri: image }}
+            className="w-36 h-36 rounded-full -mt-24"
+          />
+        ) : (
+          <TouchableOpacity
+            activeOpacity={0.7}
+            className="w-36 h-36 rounded-full -mt-24 bg-orange-400 items-center justify-center"
+            onPress={onChangeAvatar}
+          >
+            <Feather name="camera" size={32} color={colors.green[200]} />
+          </TouchableOpacity>
+        )}
 
         <Text className="font-bold text-2xl text-zinc-50 mt-4">
           Humberto Junior
