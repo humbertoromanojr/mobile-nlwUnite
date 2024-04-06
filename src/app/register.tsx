@@ -29,7 +29,7 @@ export default function Register() {
         email,
       });
 
-      console.log("==> screen register: ", registerResponse);
+      console.log("==> screen register ok: ", registerResponse);
 
       if (registerResponse.data.attendeeId) {
         Alert.alert("🎟️ Inscrição 🎟️", "🥳 Realizada com sucesso! 🥳", [
@@ -37,16 +37,19 @@ export default function Register() {
         ]);
       }
     } catch (error) {
-      //Alert.alert("Inscrição", "Não foi possível fazer a inscrição!");
-      console.log("==> screen register: ", error);
-
       if (axios.isAxiosError(error)) {
         if (
           String(error.response?.data.message).includes("already registered")
         ) {
           Alert.alert("Inscrição", "Este email já está cadastrado!");
+        } else {
+          Alert.alert("Inscrição", "Não foi possível fazer a inscrição!");
         }
       }
+
+      console.log("==> screen register error: ", error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
