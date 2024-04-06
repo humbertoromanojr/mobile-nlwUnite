@@ -14,9 +14,14 @@ import { QRCode } from "@/components/qrcode";
 type CredentialProps = {
   image?: string;
   onChangeAvatar?: () => void;
+  onExpandQRCode?: () => void;
 };
 
-export default function Credential({ onChangeAvatar, image }: CredentialProps) {
+export default function Credential({
+  onChangeAvatar,
+  onExpandQRCode,
+  image,
+}: CredentialProps) {
   return (
     <View className="w-full self-stretch items-center">
       <Image
@@ -64,7 +69,11 @@ export default function Credential({ onChangeAvatar, image }: CredentialProps) {
 
         <QRCode value="teste" size={120} />
 
-        <TouchableOpacity activeOpacity={0.7} className="mt-6">
+        <TouchableOpacity
+          activeOpacity={0.7}
+          className="mt-6"
+          onPress={onExpandQRCode}
+        >
           <Text className="font-body text-orange-500 text-sm">
             Ampliar QRCode
           </Text>
