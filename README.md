@@ -24,9 +24,14 @@ Pass.in
 - [React Native](https://reactnative.dev/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Expo](https://expo.dev/)
-- [Image picker](https://docs.expo.dev/tutorial/image-picker/)
+  - [Image picker](https://docs.expo.dev/tutorial/image-picker/)
+  - [SVG](https://docs.expo.dev/versions/latest/sdk/svg/)
+  - [Async Storage](https://docs.expo.dev/versions/latest/sdk/async-storage/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Nativewind](https://www.nativewind.dev/v4/getting-started/expo-router)
+- [React native qrcode svg](https://github.com/awesomejerry/react-native-qrcode-svg)
+- [Axios](https://github.com/axios/axios)
+- [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
 
 ## Important Settings
 
@@ -44,8 +49,12 @@ Estas outras configurações, são de extrema importância, sem elas, a sua apli
   - Updating line: `module.exports = withNativeWind(config, { input: "./src/styles/global.css" });`;
 - Create a file Identify the tailwind css type in react native: `nativewind-env.d.ts`;
   <br /><br />
-- Install fonts: `npx expo install expo-font @expo-google-fonts/roboto`
-- Install Image picker: `npx expo install expo-image-picker`
+- Install fonts: `npx expo install expo-font @expo-google-fonts/roboto`;
+- Install Image picker: `npx expo install expo-image-picker`;
+- Install QRCode: `npx expo install react-native-svg react-native-qrcode-svg`;
+- Install Axios: `npm install axios`;
+- Install Async Storage: `npx expo install @react-native-async-storage/async-storage`;
+- Install Zustand: `npm install zustand`;
 
 ## Demonstration
 
