@@ -9,12 +9,16 @@ import { Input } from "@/components/input";
 import { colors } from "@/styles/colors";
 import { Button } from "@/components/button";
 
+import { useBadgeStore } from "@/store/badge-store";
+
 const EVENT_ID = "9e9bd979-9d10-4915-b339-3786b1634f33";
 
 export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const badgeStore = useBadgeStore();
 
   async function handleRegister() {
     try {
@@ -29,14 +33,20 @@ export default function Register() {
         email,
       });
 
-      console.log("==> screen register ok: ", registerResponse);
-
       if (registerResponse.data.attendeeId) {
+        const badgeResponse = await api.get(
+          `/attendees/${registerResponse.data.attendeeId}/badge`
+        );
+
+        badgeStore.save(badgeResponse.data.badge);
+
         Alert.alert("🎟️ Inscrição 🎟️", "🥳 Realizada com sucesso! 🥳", [
           { text: "🆗", onPress: () => router.push("/ticket") },
         ]);
       }
     } catch (error) {
+      setIsLoading(false);
+
       if (axios.isAxiosError(error)) {
         if (
           String(error.response?.data.message).includes("already registered")
@@ -46,10 +56,7 @@ export default function Register() {
           Alert.alert("Inscrição", "Não foi possível fazer a inscrição!");
         }
       }
-
-      console.log("==> screen register error: ", error);
-    } finally {
-      setIsLoading(false);
+      console.log("==> register error: ", error);
     }
   }
 
