@@ -27,11 +27,13 @@ Pass.in
   - [Image picker](https://docs.expo.dev/tutorial/image-picker/)
   - [SVG](https://docs.expo.dev/versions/latest/sdk/svg/)
   - [Async Storage](https://docs.expo.dev/versions/latest/sdk/async-storage/)
+  - [Reanimated](https://docs.expo.dev/versions/latest/sdk/reanimated/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Nativewind](https://www.nativewind.dev/v4/getting-started/expo-router)
 - [React native qrcode svg](https://github.com/awesomejerry/react-native-qrcode-svg)
 - [Axios](https://github.com/axios/axios)
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
+- [Moti](https://moti.fyi/)
 
 ## Important Settings
 
@@ -55,6 +57,8 @@ Estas outras configurações, são de extrema importância, sem elas, a sua apli
 - Install Axios: `npm install axios`;
 - Install Async Storage: `npx expo install @react-native-async-storage/async-storage`;
 - Install Zustand: `npm install zustand`;
+- Install Reanimated: `npx expo install react-native-reanimated`;
+- Install Moti: `npm i moti --legacy-peer-deps`;
 
 ## Demonstration
 
