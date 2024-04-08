@@ -34,7 +34,7 @@ export default function Home() {
     }
   }
 
-  if (badgeStore.data?.checkInUrl) {
+  if (badgeStore.data?.checkInURL) {
     return <Redirect href="/ticket" />;
   }
 
