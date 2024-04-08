@@ -52,6 +52,16 @@ export default function Register() {
           String(error.response?.data.message).includes("already registered")
         ) {
           Alert.alert("Inscrição", "Este email já está cadastrado!");
+        } else if (
+          String(error.response?.data.message).includes(
+            "Error during validation"
+          )
+        ) {
+          Alert.alert(
+            "Inscrição",
+            "Email inválido, por favor, digite um email válido!"
+          );
+          console.log("==> register error: ", error.response?.data);
         } else {
           Alert.alert("Inscrição", "Não foi possível fazer a inscrição!");
         }
